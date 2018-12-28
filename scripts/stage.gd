@@ -3,21 +3,22 @@ extends Node
 var location = 0
 var track_speed = .005
 var is_ready = false
+var score = 0
 onready var trailer = find_node('trailer')
+onready var score_label = find_node('score_label')
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
+	score_label.text = String(score)
 
 func _input(event):
 	if Input.is_action_just_pressed('ui_accept'):
 		if is_ready:
-			print('note hit!')
+			score += 1
 			is_ready = false
 		else:
-			print('fail!')
+			score -= 1
 		
+	score_label.text = String(score)
 	
 func _process(delta):
 	trailer.set_unit_offset(location)
