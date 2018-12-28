@@ -11,11 +11,13 @@ func _ready():
 	pass
 
 func _input(event):
-	if Input.is_action_just_pressed('ui_accept') and is_ready:
-		print('note hit!')
-		is_ready = false
-	else:
-		print('wrong!')
+	if Input.is_action_just_pressed('ui_accept'):
+		if is_ready:
+			print('note hit!')
+			is_ready = false
+		else:
+			print('fail!')
+		
 	
 func _process(delta):
 	trailer.set_unit_offset(location)
