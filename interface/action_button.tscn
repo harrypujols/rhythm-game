@@ -1,42 +1,22 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://fonts/icons_l.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/action_button.gd" type="Script" id=1]
+[ext_resource path="res://fonts/icons_l.tres" type="DynamicFont" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="action_button" type="LinkButton"]
+[node name="action_button" type="Node2D" index="0"]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -0.567505
-margin_top = -0.695999
-margin_right = 47.4325
-margin_bottom = 47.304
-grow_horizontal = 0
-grow_vertical = 0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-custom_fonts/font = ExtResource( 1 )
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
-text = "a"
-underline = 2
-_sections_unfolded = [ "Grow Direction", "Rect" ]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Transform" ]
+button_name = 0
 
 [node name="button_body" type="Area2D" parent="." index="0"]
 
-position = Vector2( 25.2454, 24.0979 )
+position = Vector2( -0.118435, 0.143564 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -47,8 +27,33 @@ audio_bus_name = "Master"
 
 [node name="button_hitbox" type="CollisionShape2D" parent="button_body" index="0"]
 
-position = Vector2( -1.20455, -0.0380836 )
+position = Vector2( 0.0321217, -0.0943298 )
 scale = Vector2( 2.43307, 2.4113 )
 shape = SubResource( 1 )
+
+[node name="button_icon" type="Label" parent="." index="1"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -56.0
+margin_top = -56.0
+margin_right = -8.0
+margin_bottom = -8.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = ExtResource( 2 )
+text = "^"
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
 
 
