@@ -26,9 +26,8 @@ const action = {
 	}
 }
 
-signal action_ready
-signal action_taken
-signal action_over
+var action_ready = false
+signal score
 
 export(String, 'up', 'down', 'left', 'right') var tag = 'left'
 
@@ -41,10 +40,11 @@ func _ready():
 
 func _input(event):
 	if Input.is_action_just_pressed(action[tag].input):
-		emit_signal('action_taken')
+		if action_ready:
+			emit_signal('score')
 
 func _on_button_body_area_shape_entered(area_id, area, area_shape, self_shape):
-	emit_signal('action_ready')
+	action_ready = true
 
 func _on_button_body_area_shape_exited(area_id, area, area_shape, self_shape):
-	emit_signal('action_over')
+	action_ready = false

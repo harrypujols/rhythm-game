@@ -16,7 +16,7 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="stage" type="Node" index="0"]
+[node name="stage" type="Node"]
 
 script = ExtResource( 1 )
 
