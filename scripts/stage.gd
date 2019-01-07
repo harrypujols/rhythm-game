@@ -11,6 +11,8 @@ onready var action_button = find_node('action_button')
 func _ready():
 	score_label.text = String(score)
 	action_button.connect('action_taken', self, 'on_action_button_pressed', [action_button.tag])
+	action_button.connect('action_ready', self, 'on_action_button_ready')
+	action_button.connect('action_over', self, 'on_action_button_over')
 
 func _process(delta):
 	trailer.set_unit_offset(location)
@@ -25,9 +27,8 @@ func on_action_button_pressed(tag):
 		
 	score_label.text = String(score)
 
-func _on_marker_body_area_shape_entered(area_id, area, area_shape, self_shape):
+func on_action_button_ready():
 	is_ready = true
 
-
-func _on_marker_body_area_shape_exited(area_id, area, area_shape, self_shape):
+func on_action_button_over():
 	is_ready = false

@@ -39,6 +39,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="action_button" parent="track/trailer" index="0" instance=ExtResource( 2 )]
 
+tag = "down"
+
 [node name="marker" type="Node2D" parent="." index="1"]
 
 position = Vector2( 225, 80 )
@@ -143,9 +145,5 @@ text = "0"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-
-[connection signal="area_shape_entered" from="marker/marker_body" to="." method="_on_marker_body_area_shape_entered"]
-
-[connection signal="area_shape_exited" from="marker/marker_body" to="." method="_on_marker_body_area_shape_exited"]
 
 
