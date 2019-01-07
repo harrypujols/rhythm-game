@@ -42,6 +42,7 @@ func _input(event):
 	if Input.is_action_just_pressed(action[tag].input):
 		if action_ready:
 			emit_signal('score')
+			action_ready = false
 
 func _on_button_body_area_shape_entered(area_id, area, area_shape, self_shape):
 	action_ready = true
