@@ -26,12 +26,17 @@ const action = {
 	}
 }
 
+signal action_taken
+
 export(String, 'up', 'down', 'left', 'right') var tag = 'left'
 
 func set_button_tags():
-	print(tag)
 	self.set_rotation_degrees(action[tag].degree)
 	$button_icon.set_text(action[tag].text)
 
 func _ready():
 	set_button_tags()
+
+func _input(event):
+	if Input.is_action_just_pressed(action[tag].input):
+		emit_signal('action_taken')
