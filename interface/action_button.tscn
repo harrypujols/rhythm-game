@@ -8,11 +8,11 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="action_button" type="Node2D" index="0"]
+[node name="action_button" type="Node2D"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect", "Transform" ]
-button_name = 0
+tag = "left"
 
 [node name="button_body" type="Area2D" parent="." index="0"]
 
