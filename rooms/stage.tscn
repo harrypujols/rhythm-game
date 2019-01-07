@@ -8,7 +8,7 @@
 
 bake_interval = 5.0
 _data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1025.57, 141.696, 0, 0, 0, 0, -0.118776, 141.696 )
+"points": PoolVector2Array( 0, 0, 0, 0, 1025.57, 141.696, 0, 0, 0, 0, -433.116, 141.834 )
 }
 
 [sub_resource type="RectangleShape2D" id=2]
@@ -16,13 +16,12 @@ _data = {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
 [node name="track" type="Path2D" parent="." index="0"]
 
-editor/display_folded = true
 self_modulate = Color( 0.5, 0.6, 1, 0.7 )
 curve = SubResource( 1 )
 
