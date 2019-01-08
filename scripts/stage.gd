@@ -4,7 +4,7 @@ var location = 0
 var track_speed = .005
 var score = 0
 var turn = 0
-var fails = 10
+var fails = 3
 var total_score
 onready var trail = find_node('trail')
 onready var score_label = find_node('score_label')
