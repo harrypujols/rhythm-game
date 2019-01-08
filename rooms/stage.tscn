@@ -27,7 +27,7 @@ curve = SubResource( 1 )
 
 [node name="trail" type="PathFollow2D" parent="track" index="0"]
 
-position = Vector2( 1025.57, 141.696 )
+position = Vector2( -0.149934, 141.793 )
 offset = 1026.77
 h_offset = 0.0
 v_offset = 0.0
