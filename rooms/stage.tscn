@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/stage.gd" type="Script" id=1]
-[ext_resource path="res://interface/action_button.tscn" type="PackedScene" id=2]
-[ext_resource path="res://fonts/icons_m.tres" type="DynamicFont" id=3]
+[ext_resource path="res://fonts/icons_m.tres" type="DynamicFont" id=2]
 
 [sub_resource type="Curve2D" id=1]
 
@@ -37,19 +36,6 @@ loop = true
 lookahead = 4.0
 _sections_unfolded = [ "Transform" ]
 
-[node name="down" parent="track/trail" index="0" instance=ExtResource( 2 )]
-
-tag = "down"
-
-[node name="left" parent="track/trail" index="1" instance=ExtResource( 2 )]
-
-position = Vector2( 95.4106, 0.456512 )
-
-[node name="right" parent="track/trail" index="2" instance=ExtResource( 2 )]
-
-position = Vector2( 192.191, 0 )
-tag = "right"
-
 [node name="marker" type="Node2D" parent="." index="1"]
 
 editor/display_folded = true
@@ -72,7 +58,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = ExtResource( 3 )
+custom_fonts/font = ExtResource( 2 )
 text = ">"
 percent_visible = 1.0
 lines_skipped = 0
