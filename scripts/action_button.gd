@@ -38,6 +38,9 @@ func set_button_tags():
 	self.set_rotation_degrees(action[tag].degree)
 	$button_icon.set_text(action[tag].text)
 
+func reset_color():
+	$button_icon.set('custom_colors/font_color', color_white)
+	
 func _ready():
 	set_button_tags()
 

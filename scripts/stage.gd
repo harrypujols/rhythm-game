@@ -3,7 +3,6 @@ extends Node
 var location = 0
 var track_speed = .005
 var score = 0
-var turn = 0
 var fails = 3
 var total_score
 var get_action_button = load('res://interface/action_button.tscn')
@@ -22,6 +21,11 @@ func instance_action_buttons():
 		trail.add_child(action_button)
 		action_button.position.x = action_button.position.x + gap
 		gap += 80
+
+func reset_action_buttons():
+	var action_buttons = get_tree().get_nodes_in_group('action_buttons')
+	for action_button in action_buttons:
+		action_button.reset_color()
 	
 func proccess_score():
 	var score_percentage = (float(score) / total_score) * 100
@@ -46,7 +50,7 @@ func _process(delta):
 	location += track_speed
 	if trail.unit_offset == 1:
 		location = 0
-		turn += 1
+		reset_action_buttons()
 		proccess_score()
 
 	
