@@ -20,7 +20,6 @@ func instance_action_buttons():
 		action_button.tag = tag
 		action_button.connect('score', self, 'on_action_button_score')
 		trail.add_child(action_button)
-#		var size = action_button.find_node('button_hitbox').get_shape().get_extents().x
 		action_button.position.x = action_button.position.x + gap
 		gap += 80
 	
@@ -28,7 +27,6 @@ func proccess_score():
 	var score_percentage = (float(score) / total_score) * 100
 	
 	if total_score - score > fails:
-		# game over
 		global.final_score.total = total_score
 		global.final_score.scored = score
 		global.final_score.percentage = score_percentage

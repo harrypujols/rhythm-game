@@ -16,8 +16,6 @@ func get_high_score():
 		global.high_score = score
 		save.save_game()
 		best.text = 'Best score!'
-	
-	print(global.high_score)
 
 func _ready():
 	get_high_score()

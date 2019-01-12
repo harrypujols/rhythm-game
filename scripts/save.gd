@@ -5,7 +5,6 @@ const path = 'user://game.sav'
 func load_game():
 	var file = File.new()
 	if not file.file_exists(path):
-		#if there's not such file
 		save_game()
 		return
 		
