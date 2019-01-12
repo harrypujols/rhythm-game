@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/ending.gd" type="Script" id=1]
 [ext_resource path="res://interface/save.tscn" type="PackedScene" id=2]
+[ext_resource path="res://fonts/main_font.tres" type="Theme" id=3]
+[ext_resource path="res://fonts/icons_l.tres" type="DynamicFont" id=4]
+[ext_resource path="res://scripts/retry_button.gd" type="Script" id=5]
 
 [node name="ending" type="Node" index="0"]
 
@@ -11,6 +14,7 @@ script = ExtResource( 1 )
 
 [node name="centered" type="CenterContainer" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -29,17 +33,19 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 475.0
-margin_top = 266.0
-margin_right = 548.0
-margin_bottom = 334.0
+margin_left = 457.0
+margin_top = 254.0
+margin_right = 567.0
+margin_bottom = 346.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+theme = ExtResource( 3 )
 alignment = 0
+_sections_unfolded = [ "Theme" ]
 
 [node name="title" type="Label" parent="centered/lined_up" index="0"]
 
@@ -47,8 +53,8 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 73.0
-margin_bottom = 14.0
+margin_right = 110.0
+margin_bottom = 20.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -66,9 +72,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 18.0
-margin_right = 73.0
-margin_bottom = 32.0
+margin_top = 24.0
+margin_right = 110.0
+margin_bottom = 44.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -85,9 +91,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 36.0
-margin_right = 73.0
-margin_bottom = 50.0
+margin_top = 48.0
+margin_right = 110.0
+margin_bottom = 68.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -104,9 +110,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 54.0
-margin_right = 73.0
-margin_bottom = 68.0
+margin_top = 72.0
+margin_right = 110.0
+margin_bottom = 92.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -116,5 +122,55 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="retry_button" type="LinkButton" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 495.0
+margin_top = 442.0
+margin_right = 543.0
+margin_bottom = 490.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 2
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 4 )
+toggle_mode = false
+enabled_focus_mode = 0
+shortcut = null
+group = null
+text = "<"
+script = ExtResource( 5 )
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="label" type="Label" parent="retry_button" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -5.0
+margin_top = 56.0
+margin_right = 53.0
+margin_bottom = 76.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+theme = ExtResource( 3 )
+text = "retry"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Theme", "custom_styles" ]
+
+[connection signal="pressed" from="retry_button" to="retry_button" method="_on_retry_button_pressed"]
 
 
