@@ -2,7 +2,8 @@ extends Node
 
 export var track_speed = 1
 var score = 0
-var fails = 2
+var fails = 0
+var max_fails = 3
 var total_score
 var position = Vector2()
 var get_action_button = load('res://interface/action_button.tscn')
@@ -19,6 +20,7 @@ func instance_action_buttons():
 		var action_button = get_action_button.instance()
 		action_button.tag = tag
 		action_button.connect('score', self, 'on_action_button_score')
+		action_button.connect('fail', self, 'on_action_button_fail')
 		track.add_child(action_button)
 		action_button.position.x = action_button.position.x + gap
 		gap += action_button_separation
@@ -38,7 +40,7 @@ func reset_action_buttons():
 func proccess_score():
 	var score_percentage = (float(score) / total_score) * 100
 	
-	if total_score - score > fails:
+	if fails >= max_fails:
 		global.final_score.total = total_score
 		global.final_score.scored = score
 		global.final_score.percentage = score_percentage
@@ -59,3 +61,6 @@ func _process(delta):
 func on_action_button_score():
 	score += 1
 	score_label.text = String(score)
+
+func on_action_button_fail():
+	fails += 1
