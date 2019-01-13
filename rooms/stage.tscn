@@ -1,42 +1,22 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/stage.gd" type="Script" id=1]
 [ext_resource path="res://fonts/icons_m.tres" type="DynamicFont" id=2]
 [ext_resource path="res://fonts/main_font.tres" type="Theme" id=3]
-
-[sub_resource type="Curve2D" id=1]
-
-bake_interval = 5.0
-_data = {
-"points": PoolVector2Array( 0, 0, 0, 0, 1025.57, 141.696, 0, 0, 0, 0, -433.116, 141.834 )
-}
 
 [sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="stage" type="Node"]
+[node name="stage" type="Node" index="0"]
 
 script = ExtResource( 1 )
+track_speed = 5
 
-[node name="track" type="Path2D" parent="." index="0"]
+[node name="track" type="Node2D" parent="." index="0"]
 
-editor/display_folded = true
-self_modulate = Color( 0.5, 0.6, 1, 0.7 )
-curve = SubResource( 1 )
-
-[node name="trail" type="PathFollow2D" parent="track" index="0"]
-
-position = Vector2( -0.14994, 141.793 )
-offset = 1026.77
-h_offset = 0.0
-v_offset = 0.0
-rotate = false
-cubic_interp = true
-loop = true
-lookahead = 4.0
-_sections_unfolded = [ "Transform" ]
+position = Vector2( 1056.11, 112.133 )
 
 [node name="marker" type="Node2D" parent="." index="1"]
 

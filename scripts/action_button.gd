@@ -30,6 +30,7 @@ var action_ready = false
 var scored = false
 var color_red = Color('#dc322f')
 var color_white = Color('#ffffff')
+var color_green = Color('#8bac0f')
 signal score
 
 export(String, 'up', 'down', 'left', 'right') var tag = 'left'
@@ -48,15 +49,14 @@ func _input(event):
 	if Input.is_action_just_pressed(action[tag].input):
 		if action_ready:
 			scored = true
+			$button_icon.set('custom_colors/font_color', color_green)
 			emit_signal('score')
 			action_ready = false
 
 func _on_button_body_area_shape_entered(area_id, area, area_shape, self_shape):
-	print(area.name)
 	action_ready = true
 
 func _on_button_body_area_shape_exited(area_id, area, area_shape, self_shape):
 	action_ready = false
-	print('exited')
 	if not scored:
 		$button_icon.set('custom_colors/font_color', color_red)
