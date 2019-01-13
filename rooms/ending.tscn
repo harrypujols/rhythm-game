@@ -125,6 +125,7 @@ max_lines_visible = -1
 
 [node name="retry_button" type="LinkButton" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
