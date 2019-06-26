@@ -23,6 +23,10 @@ config/icon="res://icon.png"
 
 global="*res://scripts/global.gd"
 
+[debug]
+
+gdscript/warnings/enable=false
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"
