@@ -14,7 +14,6 @@ track_speed = 5
 position = Vector2( 1056.11, 112.133 )
 
 [node name="marker" type="Node2D" parent="."]
-editor/display_folded = true
 position = Vector2( 225, 80 )
 rotation = 1.5708
 
